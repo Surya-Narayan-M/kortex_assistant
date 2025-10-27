@@ -1,0 +1,43 @@
+The New Paradigm: From "Process Control" to "Application Control"
+Instead of a generic open_application tool, we'll need specialized tools for different app types. The LLM's job will be to choose the right tool and the right action within that tool.
+Here are the scenarios and the kind of JSON the AI would need to specify:
+1. For Web Browsers (Chrome, Edge, etc.)
+This is the most complex and important category.
+Scenario: Open a new, empty tab instead of a whole new window.
+Old way: open_application("chrome.exe")
+New AI Command: {"tool": "browser_control", "action": "open_tab"}
+Scenario: Open a specific website in a new tab.
+New AI Command: {"tool": "browser_control", "action": "open_tab", "url": "https://github.com"}
+Scenario: Close only the current tab, not the whole browser.
+New AI Command: {"tool": "browser_control", "action": "close_tab"}
+Scenario: Switch to a different tab.
+New AI Command: {"tool": "browser_control", "action": "switch_to_tab", "tab_title_contains": "Gmail"}
+Scenario: Refresh the page, go back, or go forward.
+New AI Command: {"tool": "browser_control", "action": "refresh"} or "go_back"
+2. For File Explorer
+We know we can't kill this one. Control must be precise.
+Scenario: Open a specific folder.
+Old way: open_application("explorer.exe C:\\Users\\...") (Clunky)
+New AI Command: {"tool": "file_explorer_control", "action": "open_folder", "path": "C:/Users/YourUser/Downloads"}
+Scenario: Create a new folder in the current window.
+New AI Command: {"tool": "file_explorer_control", "action": "create_folder", "folder_name": "My New Project"}
+Scenario: Rename a file.
+New AI Command: {"tool": "file_explorer_control", "action": "rename", "target_file": "old_name.txt", "new_name": "new_name.txt"}
+Scenario: Search for a file.
+New AI Command: {"tool": "file_explorer_control", "action": "search", "query": "*.pdf"}
+3. For Text Editors & IDEs (Notepad, VS Code)
+Scenario: Save the current file.
+New AI Command: {"tool": "editor_control", "action": "save_file"}
+Scenario: Save the file with a new name.
+New AI Command: {"tool": "editor_control", "action": "save_as", "file_path": "C:/docs/my_note.txt"}
+Scenario: Find and replace text.
+New AI Command: {"tool": "editor_control", "action": "find_and_replace", "find_text": "hello", "replace_text": "goodbye"}
+Scenario (VS Code Specific): Open the command palette and run a command.
+New AI Command: {"tool": "vscode_control", "action": "run_command_palette", "command": "Git: Stage All Changes"}
+4. For Media Players (Spotify, VLC)
+Scenario: Play or pause the music.
+New AI Command: {"tool": "media_control", "action": "toggle_play_pause"}
+Scenario: Skip to the next or previous track.
+New AI Command: {"tool": "media_control", "action": "next_track"}
+Scenario: Change the volume.
+New AI Command: {"tool": "media_control", "action": "set_volume", "level": "50%"}

@@ -1,0 +1,57 @@
+[
+    {
+        "test_name": "System Utility: Notepad",
+        "app_name": "notepad.exe",
+        "process_name": "notepad.exe"
+    },
+    {
+        "test_name": "System Utility: Calculator",
+        "app_name": "calc.exe",
+        "process_name": "Calculator.exe"
+    },
+    {
+        "test_name": "System Utility: File Explorer",
+        "app_name": "explorer.exe",
+        "process_name": "explorer.exe"
+    },
+    {
+        "test_name": "System Utility: Command Prompt",
+        "app_name": "cmd.exe",
+        "process_name": "cmd.exe"
+    },
+    {
+        "test_name": "System Utility: Task Manager",
+        "app_name": "taskmgr.exe",
+        "process_name": "Taskmgr.exe"
+    },
+    {
+        "test_name": "System Utility: Character Map",
+        "app_name": "charmap.exe",
+        "process_name": "charmap.exe"
+    },
+    {
+        "test_name": "Web Browser: Google Chrome",
+        "app_name": "chrome.exe",
+        "process_name": "chrome.exe"
+    },
+    {
+        "test_name": "Web Browser: Microsoft Edge",
+        "app_name": "msedge.exe",
+        "process_name": "msedge.exe"
+    },
+    {
+        "test_name": "Developer Tool: Visual Studio Code",
+        "app_name": "code.exe",
+        "process_name": "Code.exe"
+    },
+    {
+        "test_name": "Media Player: Spotify",
+        "app_name": "spotify.exe",
+        "process_name": "Spotify.exe"
+    },
+    {
+        "test_name": "Negative Test: Non-Existent App",
+        "app_name": "this_app_does_not_exist.exe",
+        "process_name": "this_app_does_not_exist.exe"
+    }
+]
